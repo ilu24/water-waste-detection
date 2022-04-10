@@ -1,4 +1,4 @@
-# Universal Project Scaffold
+# Water Waste Detection
 A scaffold for deploying dockerized flask applications.
 
 ### Quickstart Guide for Local Development
