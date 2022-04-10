@@ -1,3 +1,160 @@
-<h2>
-    The index works.
-</h2>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Ocean Waste Detection</title>
+        <!-- Favicon TODO: CHANGE-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-light bg-light static-top">
+            <div class="container">
+                <a class="navbar-brand"><img src="{{url_for('static', filename='images/OWD_square.png')}}" height = "75" width = "75" style="margin-right:20px" >Ocean Water Waste Detection</a>
+                <a class="nav-link" href="{{ url_for('hello_world') }}">Home</a>
+                <a class="nav-link" href="{{ url_for('the_ai') }}">The AI</a>
+                <a class="nav-link" href="{{ url_for('creators') }}">The Creators</a>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <div class="text-center text-white">
+                            <!-- Page heading-->
+                            <!-- Todo: replace with Protecting Our Oceans Block -->
+                          <img src = "{{url_for('static', filename='images/OWD_logo.png')}}" height = "200" width = "200">
+                          <br>
+                          <br>
+                          <h3 class="index-title2" style="font-size: 60px;">PROTECTING</h3>
+                          <h1 class= "index-title1" style = "font-size: 90px;">OUR OCEANS</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+<!-- introducing ai section -->
+     <section class="showcase">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-lg-6c order-lg-1 my-auto showcase-text">
+                        <h2 style="text-align:left">Introducing an AI ocean waste detector</h2>
+                        <p class="lead mb-0" style="text-align:left">An object classification model that uses YoloV5 to detect ocean trash.</p>
+                        <br>
+                        <img src = "{{url_for('static', filename='images/Kormann--Plastics.jpeg')}}" class="responsive" width="90%">
+                    </div>
+                  <div class="col-lg-6c order-lg-1 my-auto showcase-text" style = "background-color: #f2f2f2;">
+                       <img src = "{{url_for('static', filename='images/OWD_logo.png')}}" height = '150px'>
+                       <br>
+                       <br>
+                        <h1>Meet the AI</h1>
+                        <p class="lead mb-0">Our AI runs on YoloV5 in order to detect ocean waste in our oceans.</p>
+                        <br>
+                    <a type="button" class="btn btn-primary"  href="{{ url_for('the_ai') }}"> The AI</a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Read More Section-->
+        <section style="background-color: #F2F2F2;">
+        <br>
+        <br>
+        <h1 style="text-align: center;">40% of the ocean surface is plastic.</h1>
+          <br>
+        <p style="text-align: center; margin-left: 100px; margin-right:100px; color:#808080;">There are approximately 296000 tonnes of plastic in our oceans. Everyday, 8 million pieces of plastic enter our ocean's waters. 1 million+ animals die from plastic pollution every year. The Great Pacific Garbage Patch is approximately 1.6 million km2. 1 in 3 fish caught for human consumption contains plastic. 88% of the ocean surface is polluted by plastic.
+</p>
+          <br>
+          <div class="text-center">
+         <a type="button" class="btn btn-primary" href="https://www.condorferries.co.uk/plastic-in-the-ocean-statistics" target=”_blank”>
+           Read More
+          </a>
+          <br>
+          <br>
+          </div>
+        </section>
+        <!-- How to help-->
+        <section class="text-center">
+          <div class = "features-icons bgimg">
+          <h1>
+            How to Help
+          </h1>
+            <div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-recycle m-auto text-primary"></i></div>
+                            <h3>Reusables</h3>
+                          <p class="lead mb-0"><em>Limit purchases of single use plastic. Try to use reusable products (ie: reusable grocery bags, water bottles)!</em></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-shop m-auto text-primary"></i></div>
+                            <h3>Shop Local</h3>
+                            <p class="lead mb-0"><em>Buy groceries at farmers' markets or local grocery stores, and use reusable grocery bags
+</em></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-bag m-auto text-primary"></i></div>
+                            <h3>Consumption</h3>
+                            <p class="lead mb-0"><em>Try to buy second hand or higher quality products made to last!
+</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </section>
+        <!-- Footer-->
+          <footer class="footer bg-dark" style="background-color:#000000">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                        <p class="text-muted small mb-4 mb-lg-0" style = "text-color:white;">&copy; Ocean Waste Detection 2022. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item me-4">
+                                <a href="ilu24@lelycee.org"><i class="bi-envelope fs-3" style = "color:white;"></i></a>
+                            </li>
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-github fs-3" style = "color:white;"></i></a>
+                            </li>
+                            <li class="list-inline-item me-4">
+                                <a href="https://www.instagram.com/chashakuu/"><i class="bi-instagram fs-3" style = "color:white;"></i></a>
+                            </li>
+                          <li class="list-inline-item me-4">
+                                <a href="https://ai-camp.org"><i class="bi-bookmark fs-3" style = "color:white;"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
