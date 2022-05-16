@@ -76,7 +76,7 @@ def hello_world():
     return render_template('index.html')
 
 
-@app.route(base_url + "/creators/")
+@app.route("/creators/")
 def creators():
     '''
     Purpose: render the creator page of our website.
