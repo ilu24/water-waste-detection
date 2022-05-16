@@ -14,17 +14,14 @@ from utility import get_base_url, allowed_file, and_syntax
 
 # setup the webserver
 # port may need to be changed if there are multiple flask servers running on same server
-port = 12347
-base_url = get_base_url(port)
-app = Flask(__name__, static_url_path=base_url + 'static')
 ALLOWED_EXTENSIONS = set(['jpg', 'jpeg'])
-# app = Flask(__name__)
+app = Flask(__name__)
 
 UPLOAD_FOLDER = 'images'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='yolo/best.pt')  # local model
 
-@app.route(base_url + "/the-ai/")
+@app.route("/the-ai/")
 def the_ai():
     '''
     Purpose: render the model's page of our website.
@@ -46,7 +43,7 @@ def get_prediction(img_bytes):
     return results
 
 
-@app.route(base_url + "/the-ai/", methods=['GET', 'POST'])
+@app.route("/the-ai/", methods=['GET', 'POST'])
 def the_ai_post():
     if request.method == 'POST':
         if 'file' not in request.files:
@@ -69,7 +66,7 @@ def the_ai_post():
                                     filename=filename))
 
 
-@app.route(base_url + "/")
+@app.route("/")
 def hello_world():
     '''
     Purpose: render the home page of our website.
@@ -89,7 +86,7 @@ def creators():
     return render_template('thecreators.html')
 
 
-@app.route(base_url + "/the-ai" + "/uploads/<filename>")
+@app.route("/the-ai" + "/uploads/<filename>")
 def results(filename):
     '''
     Purpose: render the model's page of our website.
@@ -108,7 +105,7 @@ def results(filename):
 
     return render_template('results.html', filename=filename)
 
-@app.route(base_url + "/the-ai" + "/uploads/<filename>", methods=['GET', 'POST'])
+@app.route("/the-ai" + "/uploads/<filename>", methods=['GET', 'POST'])
 def results_post(filename):
     '''
     Purpose: render the model's page of our website.
@@ -137,7 +134,7 @@ def results_post(filename):
 
 
 
-@app.route(base_url + '/files/<path:filename>')
+@app.route('/files/<path:filename>')
 def files(filename):
     return send_from_directory(UPLOAD_FOLDER, filename, as_attachment=True)
 
